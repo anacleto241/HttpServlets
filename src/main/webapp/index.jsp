@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Java Servlets - Testes HTTP</title>
 
+    <!-- Bootstrap 5 via CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body class="bg-light">
@@ -67,35 +68,21 @@
             </div>
         </div>
 
-        		<div class="col">
-    <div class="card border-secondary">
-        <div class="card-body">
-            <h5 class="card-title">Métodos Suportados (OPTIONS)</h5>
-            <p class="card-text">Exibe os métodos HTTP suportados pelo servidor.</p>
-            <button class="btn btn-secondary" onclick="enviarOptions()">Enviar Requisição OPTIONS</button>
-            <pre id="resposta"></pre>
+        <div class="col">
+            <div class="card border-secondary">
+                <div class="card-body">
+                    <h5 class="card-title">Métodos Suportados (OPTIONS)</h5>
+                    <p class="card-text">Exibe os métodos HTTP suportados pelo servidor.</p>
+                    <form action="methods" method="options">
+                        <button type="submit" class="btn btn-secondary">Enviar Requisição OPTIONS</button>
+                    </form>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-
-	<script>
-	function enviarOptions() {
-    	fetch('methods', {
-       	 method: 'OPTIONS'
-    	})
-    	.then(response => response.text())
-    	.then(data => {
-        	document.getElementById('resposta').textContent = data;
-    	})
-    	.catch(error => {
-        	document.getElementById('resposta').textContent = 'Erro: ' + error;
-    	});
-	}
-	</script>
-        		
 
     </div>
 </div>
+
 
 </body>
 </html>

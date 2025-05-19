@@ -35,6 +35,9 @@ OPTIONS /methods Responde com os métodos suportados
             case "/status":
                 processStatus(request, response);
                 break;
+            case "/methods":
+            	doOptions(request, response);
+                break;
             default:
                 response.sendError(404, "Caminho GET não suportado. Use /headers, /session ou /status.");
         }
